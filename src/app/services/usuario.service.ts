@@ -17,4 +17,12 @@ export class UsuarioService {
       })
     );
   }
+
+  getUserById(id: string) {
+    return this._httpClient.get(`${this.url}/users/${id}`).pipe(
+      map((resp) => {
+        return resp['data'];
+      })
+    );
+  }
 }
